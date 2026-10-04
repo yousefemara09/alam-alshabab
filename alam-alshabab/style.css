@@ -1,0 +1,94 @@
+/*
+Theme Name: عالم الشباب
+Description: ثيم مدونة أخبار ومقالات للشباب (دراسة، شغل، تطوير ذات). يدعم العربية RTL بالكامل.
+Version: 1.0
+Author: عالم الشباب
+Text Domain: jeel
+*/
+:root{--bg:#f6f7fb;--ink:#161a33;--muted:#5d6280;--line:#dfe2ef;--card:#fff;--brand:#3b3fe0;--brand-ink:#fff;--pop:#ffd23f;--r:14px}
+@media (prefers-color-scheme:dark){:root{--bg:#10122a;--ink:#eceefb;--muted:#a3a8cc;--line:#262a52;--card:#181b3a;--brand:#7c80ff;--brand-ink:#10122a}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;font-size:18px;line-height:1.85}
+h1,h2,h3,h4{font-family:'Readex Pro','IBM Plex Sans Arabic',Tahoma,sans-serif;line-height:1.4;margin:0 0 .5em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;right:-999px}.skip:focus{right:10px;top:10px;background:var(--pop);color:#000;padding:8px 14px;z-index:99}
+
+/* header */
+.site-head{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{font-family:'Readex Pro',sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:-.5px}
+.brand span{background:var(--pop);color:#161a33;padding:0 .35em;border-radius:8px;margin-inline-start:.2em}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+.nav a{display:block;padding:6px 14px;border-radius:99px;font-size:.95rem;font-weight:500;color:var(--muted)}
+.nav a:hover,.nav .current-menu-item a,.nav .current-cat a{background:var(--brand);color:var(--brand-ink)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:6px 12px;font:inherit;cursor:pointer}
+@media(max-width:760px){.menu-btn{display:block}.nav{display:none;width:100%;padding-bottom:12px}.nav.open{display:block}.head-row{flex-wrap:wrap;padding-top:8px}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:0;margin:28px 0;background:var(--brand);color:var(--brand-ink);border-radius:22px;overflow:hidden}
+.hero-img{min-height:340px;background:#2a2ea8 center/cover}
+.hero-body{padding:36px;display:flex;flex-direction:column;justify-content:center;order:-1}
+.hero h2{font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:800}
+.hero p{margin:0 0 18px;opacity:.9}
+.btn{display:inline-block;align-self:flex-start;background:var(--pop);color:#161a33;font-weight:700;padding:10px 22px;border-radius:99px}
+.btn:hover{filter:brightness(.95)}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-body{order:0;padding:24px}.hero-img{min-height:200px;order:-1}}
+
+/* category pills */
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 28px}
+.cats a{border:1px solid var(--line);background:var(--card);padding:4px 16px;border-radius:99px;font-size:.92rem}
+.cats a:hover{border-color:var(--brand);color:var(--brand)}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--brand),#2a2ea8);object-fit:cover;width:100%}
+.card-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.tag{font-size:.82rem;font-weight:700;color:var(--brand);margin-bottom:4px}
+.card h3{font-size:1.15rem;font-weight:700}
+.card:hover h3{color:var(--brand)}
+.card p{color:var(--muted);font-size:.95rem;margin:0 0 12px;line-height:1.7}
+.meta{margin-top:auto;font-size:.84rem;color:var(--muted)}
+.sec-title{font-size:1.5rem;font-weight:800;margin:36px 0 18px;padding-inline-start:12px;border-inline-start:6px solid var(--pop)}
+
+/* single */
+.article{max-width:740px;margin:36px auto}
+.article h1{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800}
+.article .meta{margin:0 0 24px}
+.article .feat{border-radius:var(--r);margin-bottom:28px;width:100%}
+.entry>*{margin-block:0 1.2em}
+.entry h2{font-size:1.6rem;margin-top:1.6em}.entry h3{font-size:1.3rem;margin-top:1.4em}
+.entry a{color:var(--brand);text-decoration:underline;text-underline-offset:3px}
+.entry blockquote{margin-inline:0;padding:6px 20px;border-inline-start:5px solid var(--pop);background:var(--card);border-radius:0 var(--r) var(--r) 0;color:var(--muted)}
+.entry ul,.entry ol{padding-inline-start:1.4em}
+.entry table{border-collapse:collapse;width:100%}.entry td,.entry th{border:1px solid var(--line);padding:8px 12px}
+.post-tags a{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:0 12px;margin:0 0 6px 6px;font-size:.85rem}
+
+/* misc */
+.pagination{margin:36px 0;display:flex;justify-content:center}
+.pagination .nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.pagination a,.pagination span{padding:6px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.pagination .current{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.search-form{display:flex;gap:8px}
+.search-form input[type=search]{flex:1;padding:10px 16px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--ink);font:inherit}
+.search-form button,.comment-form input[type=submit]{background:var(--brand);color:var(--brand-ink);border:0;border-radius:99px;padding:10px 22px;font:inherit;font-weight:700;cursor:pointer}
+.comments{margin-top:48px}
+.comments ol{list-style:none;padding:0}.comments li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;margin-bottom:12px}
+.comment-form input[type=text],.comment-form input[type=email],.comment-form input[type=url],.comment-form textarea{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.page-head{padding:36px 0 8px}.page-head h1{font-size:2rem;font-weight:800;margin:0}
+.empty{text-align:center;padding:60px 0;color:var(--muted)}
+.site-foot{margin-top:60px;background:#161a33;color:#c9cdee;padding:36px 0;font-size:.95rem}
+.site-foot a:hover{color:var(--pop)}
+.foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.foot-row ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;flex-wrap:wrap}
+.alignleft{float:left;margin:0 16px 8px 0}.alignright{float:right;margin:0 0 8px 16px}.aligncenter{margin-inline:auto}
+.wp-caption-text,figcaption{font-size:.85rem;color:var(--muted);text-align:center}
+
+/* ads */
+.ad{margin:28px 0;text-align:center;overflow:hidden;min-height:50px}.grid .ad{grid-column:1/-1;margin:8px 0}
